@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contextual RAG Chatbot</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Chat Section (Left Side) -->
+        <div class="chat-section">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-title">
+                    <span class="status-indicator"></span>
+                    🤖 Contextual RAG Chatbot
+                </div>
+            </div>
+            
+            <!-- System Status -->
+            <div id="systemStatus" class="system-status">
+                <div class="status-indicator"></div>
+                <span>Checking system status...</span>
+            </div>
+            
+            <!-- Chat Messages -->
+            <div id="chatMessages" class="chat-messages">
+                <div class="message assistant">
+                    <div class="message-content">
+                        👋 Welcome to the Contextual RAG Chatbot! 
+                        <br><br>
+                        I can help you with questions about:
+                        <br>• 📄 Procurement policies and procedures
+                        <br>• 🛡️ Information security guidelines  
+                        <br>• 👥 HR policies and bylaws
+                        <br>• 📋 Government standards and regulations
+                        <br><br>
+                        Ask me anything about your organizational documents!
+                    </div>
+                    <div class="message-timestamp">System</div>
+                </div>
+            </div>
+            
+            <!-- Chat Input -->
+            <div class="chat-input-section">
+                <textarea 
+                    id="chatInput" 
+                    class="chat-input" 
+                    placeholder="Ask me about procurement, security, HR policies, or any organizational documents..."
+                    rows="1"></textarea>
+                <button id="sendButton" class="send-button" title="Send message">
+                    ➤
+                </button>
+            </div>
+        </div>
+        
+        <!-- Pipeline Section (Right Side) -->
+        <div class="pipeline-section">
+            <!-- Pipeline Header -->
+            <div class="pipeline-header">
+                🔄 4-Agent RAG Pipeline
+            </div>
+            
+            <!-- Agent Cards -->
+            <div id="agentContainer">
+                <!-- Agent cards will be dynamically populated -->
+            </div>
+            
+            <!-- RAGAs Metrics -->
+            <div id="ragasMetrics" class="ragas-metrics">
+                <div class="ragas-header">📊 RAGAs Individual Metrics</div>
+                <div class="loading">
+                    <span>Awaiting evaluation...</span>
+                </div>
+            </div>
+            
+            <!-- Debug Controls -->
+            <div style="margin-top: 20px; text-align: center; opacity: 0.7;">
+                <button onclick="testQuery()" style="margin: 5px; padding: 8px 16px; border: 1px solid #ddd; border-radius: 5px; background: white; cursor: pointer; font-size: 12px;">
+                    🧪 Test Query
+                </button>
+                <button onclick="clearChat()" style="margin: 5px; padding: 8px 16px; border: 1px solid #ddd; border-radius: 5px; background: white; cursor: pointer; font-size: 12px;">
+                    🗑️ Clear Chat
+                </button>
+                <button onclick="exportHistory()" style="margin: 5px; padding: 8px 16px; border: 1px solid #ddd; border-radius: 5px; background: white; cursor: pointer; font-size: 12px;">
+                    💾 Export History
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Include JavaScript -->
+    <script src="/static/js/app.js"></script>
+    
+    <!-- Additional meta tags for SEO and mobile -->
+    <meta name="description" content="Advanced Contextual RAG Chatbot with 4-Agent Pipeline and RAGAs Evaluation">
+    <meta name="keywords" content="RAG, Chatbot, AI, Document Q&A, RAGAs, CrewAI">
+    <meta name="author" content="Contextual RAG Team">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Contextual RAG Chatbot">
+    <meta property="og:description" content="Advanced AI-powered document Q&A system with real-time agent monitoring">
+    <meta property="og:type" content="website">
+    
+    <!-- Additional styles for enhanced UX -->
+    <style>
+        /* Additional loading animations */
+        .typing-indicator {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .typing-indicator::after {
+            content: '💭';
+            animation: typing 1.5s infinite;
+        }
+        
+        @keyframes typing {
+            0%, 60% { opacity: 0; }
+            30% { opacity: 1; }
+        }
+        
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus styles for better accessibility */
+        .chat-input:focus,
+        .send-button:focus {
+            outline: 2px solid #667eea;
+            outline-offset: 2px;
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .message.user .message-content {
+                background: #000000;
+                color: #ffffff;
+                border: 2px solid #ffffff;
+            }
+            
+            .message.assistant .message-content {
+                background: #ffffff;
+                color: #000000;
+                border: 2px solid #000000;
+            }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .chat-input-section,
+            .pipeline-section {
+                display: none;
+            }
+            
+            .chat-section {
+                flex: 1;
+                box-shadow: none;
+                border: 1px solid #000;
+            }
+            
+            .message {
+                break-inside: avoid;
+            }
+        }
+    </style>
+    
+    <!-- Error boundary for JavaScript errors -->
+    <script>
+        window.addEventListener('error', function(e) {
+            console.error('🚨 JavaScript Error:', e.error);
+            
+            // Show user-friendly error message
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.innerHTML = `
+                <strong>⚠️ Application Error</strong><br>
+                Something went wrong. Please refresh the page or contact support.
+            `;
+            
+            const chatMessages = document.getElementById('chatMessages');
+            if (chatMessages) {
+                chatMessages.appendChild(errorDiv);
+            }
+        });
+        
+        // Service worker registration for PWA capabilities (optional)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // Uncomment if you want PWA functionality
+                // navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+ # Environment
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+*.log
+logs/
+
+# Results
+evaluation/results/
+ragas_output/
+
+# IDE
+.vscode/
+.idea/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Specific Files
+complete_remaining_chunks.py
+commands.txt
+change_password.py

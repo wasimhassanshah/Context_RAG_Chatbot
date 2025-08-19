@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "generated_at": "2025-08-16T20:44:09.734295",
+    "total_questions": 2,
+    "successful_generations": 2,
+    "failed_generations": 0,
+    "question_set": "basic",
+    "rag_system": "CrewAI_3_Agent_Pipeline_No_Evaluation",
+    "models": {
+      "llm": "llama3.2:1b",
+      "embedding": "nomic-embed-text",
+      "reranking": "all-minilm"
+    },
+    "description": "Ground truth generated using individual CrewAI agents (retriever, reranker, generator) without evaluation"
+  },
+  "data": [
+    {
+      "question": "How do the \"Delivery Terms\" and \"Payment Terms\" relate to a \"Purchase Order\" within the procurement process described in this document?",
+      "answer": "Based on the provided context documents, here is a comprehensive answer to the question:\n\nThe \"Delivery Terms\" and \"Payment Terms\" are crucial components of a Purchase Order (PO) within the procurement process described in Document 2: Procurement Manual (Business Process). These terms outline the expectations for the delivery and payment of goods or services.\n\n**Delivery Terms:**\n\nThe Delivery Terms specify the conditions under which the supplier is expected to deliver the goods or services. They typically include:\n\n* The scope of work\n* The timeline for completion\n* The quality standards that must be met\n* Any specific requirements for testing, inspection, or certification\n\nIn Document 3: Procurement Manual (Ariba Aligned), it is mentioned that \"The Procurement Manual provides operational procedures to the Procurement practitioners. It reinforces the Procurement Standards, the Procurement Charter, and the Procurement Delegation of Authority (PDoA), giving a more detailed explanation of their application.\"\n\n**Payment Terms:**\n\nThe Payment Terms outline the conditions under which payment will be made for the goods or services delivered. They typically include:\n\n* The method of payment\n* The amount to be paid\n* Any specific requirements for payment documentation\n\nIn Document 2, it is stated that \"The Procurement Manual covers all relevant procurement processes and serves as the operational framework.\"\n\n**Relationship between Delivery Terms and Payment Terms:**\n\nThe delivery terms and payment terms are closely related. The supplier's obligation to deliver goods or services within the specified timeframe (delivery term) is contingent upon their ability to meet the quality standards outlined in the delivery terms.\n\nIn other words, if the supplier fails to meet the quality standards, they may not be able to deliver the goods or services on time, which could result in delays or even non-delivery. Conversely, if the payment terms are not met, the procurement authority may not be able to pay for the goods or services delivered.\n\nIn Document 1: Abu Dhabi Procurement Standards.PDF (arrangements with the Supplier to obtain a return authorisation - C3. Arrangement of returns - C4. Communication with Suppliers and the End-users - C5. Ensure receiving appropriate credit for the returns - C6. Recording the return transaction details including the reason for returns ## 13.15. Disputes Related to Goods Purchasing), it is mentioned that \"The Procurement shall ensure receiving the communication about dispute from the End-users. The Procurement shall verify the claims for compensation and may seek advice from the Finance and the Legal if required.\"\n\nIn this context, the delivery terms and payment terms are essential components of the procurement process. The supplier's obligation to deliver goods or services within a specified timeframe is contingent upon their ability to meet the quality standards outlined in the delivery terms. Similarly, the procurement authority must ensure that the payment terms are met before paying for the goods or services delivered.\n\nIn summary, the \"Delivery Terms\" and \"Payment Terms\" are critical components of a Purchase Order (PO) within the procurement process described in this document. They outline the conditions under which the supplier is expected to deliver goods or services and the method of payment, respectively.",
+      "contexts": [
+        "arrangements with the Supplier to obtain a return authorisation - C3. Arrangement of returns - C4. Communication with Suppliers and the End-users - C5. Ensure receiving appropriate credit for the returns - C6. Recording the return transaction details including the reason for returns ## 13.15. Disputes Related to Goods Purchasing\n\n- The Procurement shall manage all disputes raised by the End-users not limited to the following scenarios: A\n- A1. Goods shortage\n- A2. Goods not as per required specification\n- A3. Substitute goods which have not been authorised or approved\n- A4. Goods not conforming to technical specifications\n- A5. Goods not as per required shelf life\n- A6. Damaged goods\n- The Procurement shall ensure receiving the communication about dispute from the End-users. The Procurement shall verify the claims for compensation and may seek advice from the Finance and the Legal if required. The Procurement shall send the notification to the Supplier to replace or provide reimbursement for the goods. B\n- If the Supplier raises a dispute to the claim, the Procurement shall facilitate dispute resolution with the Supplier. C.",
+        "and justification for emergency purchase is approved by approvers designated as per the PDoA . - d. Procurement creates the PO which is approved by approvers designated as per the PDoA . - e. Procurement engages with the Supplier and procures the required goods/services/projects. ## ii. Conduct Petty Cash/P-Card purchase\n\n- a) For purchases below the spend threshold specified for P-Card or Petty Cash purchases in the PDoA, the End-user directly engages with the Supplier and procures required goods/services/projects.\n- b) PR and PO are created and approved post-factum.\n\n## 3. Roles and Responsibilities",
+        "| ## 1. Introduction ## 1.1 Introduction to Procurement Manual ## 1.1.1 Purpose of the Procurement Manual The Procurement Manual provides operational procedures to the Procurement practitioners. It reinforces the Procurement Standards, the Procurement Charter, and the Procurement Delegation of Authority (PDoA), giving a more detailed explanation of their application.\n\n## 1.1.2 Scope of the Procurement Manual\n\nThe Procurement Manual applies to all procurement activities conducted by the government Entities and  the  Government  Procurement  Office  (GPO).  The  Executive  Council  (EC),  or  a  relevant  body authorised by the EC, may exclude an Entity from the application of the Procurement Manual. The Procurement  Manual  covers  all  relevant  procurement  processes  and  serves  as  the  operational framework.\n\n## 1.1.2.(I) List of Exemptions\n\nThe Procurement Manual does not apply to:"
+      ],
+      "source_files": [
+        "Abu Dhabi Procurement Standards.PDF",
+        "Procurement Manual (Business Process).PDF",
+        "Procurement Manual (Ariba Aligned).PDF"
+      ],
+      "processing_time": 106.846594,
+      "retrieval_count": 12,
+      "reranked_count": 3,
+      "generation_method": "llama3.2-1b",
+      "pipeline_stages": {
+        "retrieval": {
+          "documents_found": 12,
+          "status": "success"
+        },
+        "reranking": {
+          "documents_reranked": 3,
+          "status": "success"
+        },
+        "generation": {
+          "response_generated": true,
+          "status": "success"
+        },
+        "evaluation": {
+          "status": "skipped_for_ground_truth_generation"
+        }
+      },
+      "generation_timestamp": "2025-08-16T20:42:42.424106"
+    },
+    {
+      "question": "What are the specific sub-controls listed under \"T5.2.3 USER SECURITY CREDENTIALS MANAGEMENT\"?",
+      "answer": "Based on the provided context documents, specifically Document 1: Inforamation Security.pdf (Relevance: 0.787), we can identify the following sub-controls listed under \"T5.2.3 USER SECURITY CREDENTIALS MANAGEMENT\":\n\n## IMPLEMENTATION GUIDANCE (FOR INFORMATION PURPOSE ONLY)\n\n## A management system for user credentials should:\n\nThe entity shall set maximum lifetime and reuse conditions to ensure that user credentials are not reused unnecessarily.\n\n## RECORDS AND DATA PROTECTION\n\n| M5.2.4      | DATAPROTECTION ANDPRIVACY OFPERSONAL INFORMATION PRIORITY P3 APPLICABILITY BASEDONRISK ASSESSMENT                                                                                                                                                                                                                                                                                              |\n|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| CONTROL     | Theentity shall ensure data protection and privacy as required in relevant legislation, regulations, and, if applicable, contractual clauses.                                                                                                                                                                                                                                                  |\n| SUB-CONTROL | The entity shall: 1) Define a process for identifying records with specific compliance requirements regarding loss, destruction, falsification, or other applicable characteristics 2) Determine specific system requirements resulting from the identified requirements 3) Define specific controls to ensure all record protection |\n\n## RECORDS AND DATA PROTECTION\n\nThe entity should categorize user credentials into different types of records, such as:\n\n* User credentials\n* Authentication data\n* Authorization data\n* Session data\n* Other relevant data\n\nEach type of record should have a clear definition of its characteristics, retention periods, and storage requirements.\n\n## RECORDS AND DATA PROTECTION\n\nThe entity should maintain an inventory of sources of key information related to user credentials, including:\n\n* Cryptographic keys used for encryption\n* Digital signatures used for authentication\n* Other relevant cryptographic materials\n\nThis inventory should be regularly reviewed and updated to ensure that all necessary controls are in place.\n\n## RECORDS AND DATA PROTECTION\n\nThe entity should implement appropriate controls to protect user credentials from loss, destruction, or falsification, including:\n\n* Regular backups of user credential data\n* Secure storage of user credential data\n* Access controls for user credential data\n* Auditing and logging of access to user credential data\n\nBy implementing these controls, the entity can ensure that user credentials are protected and that unauthorized access is prevented.\n\nIn summary, the specific sub-controls listed under \"T5.2.3 USER SECURITY CREDENTIALS MANAGEMENT\" in Document 1 include:\n\n* Setting maximum lifetime and reuse conditions for user credentials\n* Defining a process for identifying records with specific compliance requirements regarding loss, destruction, falsification, or other applicable characteristics\n* Determining specific system requirements resulting from the identified requirements\n* Defining specific controls to ensure all record protection\n\nThese sub-controls are essential for ensuring that user credentials are properly managed and protected.",
+      "contexts": [
+        "| | SUB-CONTROL | The user credential management system shall: 1) Automate the user credential change procedure ensuring the authenticity of the associate user identity 2) Validate that the changed credentials have sufficient strength for their intended use to ensure quality secret authentication 3) Setamaximum lifetime and reuse conditions |\n\n## IMPLEMENTATION GUIDANCE (FOR INFORMATION PURPOSE ONLY)\n\n## A management system for user credentials should:",
+        "contractual, and business requirements. | | SUB-CONTROL | The entity shall: 1) Define a process for identifying records with specific compliance requirements regarding loss, destruction, falsification, or other applicable characteristics 2) Determine specific system requirements resulting from the identified requirements 3) Define specific controls to ensure all record protection |\n\nRecords should be categorized into record types, e.g. accounting records, database records, transaction logs, audit logs, and operational procedures, each with details of retention periods and type of storage media. Any related cryptographic keying material and programs associated with encrypted archives or digital signatures, should also be stored to enable decryption of the records for the length of time the records are retained.",
+        "B. A retention schedule should be drawn up identifying records and the period of time for which they should be retained - C. An inventory of sources of key information should be maintained - D. Appropriate controls should be implemented to protect records and information from loss, destruction, and falsification\n\n| M5.2.4      | DATAPROTECTION ANDPRIVACY OFPERSONAL INFORMATION PRIORITY P3 APPLICABILITY BASEDONRISK ASSESSMENT                                                                                                                                                                                                                                                                                              |\n|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|\n| CONTROL     | Theentity shall ensure data protection and privacy as required in relevant legislation, regulations, and, if applicable, contractual clauses.                                                                                                                                                                                                                                                  |\n| SUB-CONTROL | The entity shall: 1) Define a process for identifying data with specific compliance requirements regarding protection and privacy 2) Determine specific system requirements resulting from the identified requirements 3) Define specific controls to ensure all data protection and privacy requirements are met 4) Periodically review requirements and associated controls for completeness |"
+      ],
+      "source_files": [
+        "Inforamation Security.pdf"
+      ],
+      "processing_time": 87.309179,
+      "retrieval_count": 4,
+      "reranked_count": 3,
+      "generation_method": "llama3.2-1b",
+      "pipeline_stages": {
+        "retrieval": {
+          "documents_found": 4,
+          "status": "success"
+        },
+        "reranking": {
+          "documents_reranked": 3,
+          "status": "success"
+        },
+        "generation": {
+          "response_generated": true,
+          "status": "success"
+        },
+        "evaluation": {
+          "status": "skipped_for_ground_truth_generation"
+        }
+      },
+      "generation_timestamp": "2025-08-16T20:44:09.733285"
+    }
+  ]
+}
